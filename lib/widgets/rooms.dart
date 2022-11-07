@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/config/palette.dart';
 import 'package:flutter_facebook_responsive_ui/models/models.dart';
@@ -54,6 +56,23 @@ class _CreateRoomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () => debugPrint('Create Room'),
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all<OutlinedBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+          ),
+          textStyle: MaterialStateProperty.all<TextStyle>(
+            const TextStyle(
+              color: Palette.facebookBlue,
+            ),
+          ),
+          side: MaterialStateProperty.all<BorderSide>(
+            const BorderSide(
+              color: Color(0xFF2979FF),
+              width: 3.0,
+            ),
+          )),
       child: Row(children: [
         ShaderMask(
           shaderCallback: (rect) =>
@@ -64,39 +83,15 @@ class _CreateRoomButton extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        // Icon(
+        //   Icons.video_call,
+        //   size: 35.0,
+        //   color: Colors.purple,
+        // ),
+
+        const SizedBox(width: 4.0),
+        const Text('Create\nRoom'),
       ]),
     );
-    // OutlineButton(
-    //   onPressed: () => print('Create Room'),
-    //   shape: RoundedRectangleBorder(
-    //     borderRadius: BorderRadius.circular(30.0),
-    //   ),
-    //   color: Colors.white,
-    //   borderSide: BorderSide(
-    //     width: 3.0,
-    //     color: Colors.blueAccent[100],
-    //   ),
-    //   textColor: Palette.facebookBlue,
-    //   child: Row(
-    //     children: [
-    //       // ShaderMask(
-    //       //   shaderCallback: (rect) =>
-    //       //       Palette.createRoomGradient.createShader(rect),
-    //       //   child: Icon(
-    //       //     Icons.video_call,
-    //       //     size: 35.0,
-    //       //     color: Colors.white,
-    //       //   ),
-    //       // ),
-    //       Icon(
-    //         Icons.video_call,
-    //         size: 35.0,
-    //         color: Colors.purple,
-    //       ),
-    //       const SizedBox(width: 4.0),
-    //       Text('Create\nRoom'),
-    //     ],
-    //   ),
-    // );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/data/data.dart';
+import 'package:flutter_facebook_responsive_ui/screens/cupertino_sliver_navigation_bar.dart';
+import 'package:flutter_facebook_responsive_ui/screens/indexed_stack.dart';
 import 'package:flutter_facebook_responsive_ui/screens/screens.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -14,8 +16,10 @@ class NavScreen extends StatefulWidget {
 class NavScreenState extends State<NavScreen> {
   final List<Widget> _screens = [
     const HomeScreen(),
-    const Scaffold(),
-    const Scaffold(),
+    const IndexedStackApp(),
+    // const Scaffold(),
+    // const Scaffold(),
+    const SliverNavBarApp(),
     const Scaffold(),
     const Scaffold(),
     const Scaffold(),
